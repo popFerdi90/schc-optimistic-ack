@@ -1,0 +1,15 @@
+# Exact versions with which the shipped results/ and figs/ were re-verified
+# (Python 3.12.3). The authors' original campaign used Python 3.11.15,
+# NumPy 2.4.4, SciPy 1.17.1, Matplotlib 3.10.9; results are identical.
+numpy==2.4.4
+scipy==1.17.1
+matplotlib==3.10.8
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.62.1
+kiwisolver==1.5.0
+packaging==26.0
+pillow==12.1.1
+pyparsing==3.3.2
+python-dateutil==2.9.0.post0
+six==1.17.0

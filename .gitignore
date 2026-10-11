@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Scratch output of `make verify`
+.verify/
+
+# LaTeX build products (sn-article.pdf is tracked on purpose)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      full_verify:
+        description: "Also re-run the whole campaign and compare with results/ (~20 min)"
+        type: boolean
+        default: false
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - run: pip install -r requirements-lock.txt
+      - name: Fast checks (seeds, determinism, shipped results, table audit)
+        run: python -m unittest discover -s tests -v
+      - name: Figures regenerate from results/ without error
+        run: python -m simulator.figures
+
+  full-verify:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.full_verify }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-lock.txt
+      - name: Re-run the whole campaign and compare with results/
+        run: |
+          python -m simulator.experiments --all --out .verify
+          python scripts/compare_results.py results .verify

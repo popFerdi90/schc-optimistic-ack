@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite the paper below."
+title: "Adaptive SCHC ACK-on-Error: simulator and reproduction package"
+type: software
+version: 1.0.0
+date-released: 2026-10-10
+license: MIT
+authors:
+  - family-names: Atta
+    given-names: Amanvon Ferdinand
+    email: amanvon.atta@uvci.edu.ci
+    affiliation: "Université Virtuelle de Côte d'Ivoire"
+  - family-names: Toutain
+    given-names: Laurent
+    email: laurent.toutain@imt-atlantique.fr
+    affiliation: "IMT Atlantique, IRISA"
+  - family-names: Maillé
+    given-names: Patrick
+    email: patrick.maille@imt-atlantique.fr
+    affiliation: "IMT Atlantique, IRISA"
+repository-code: "https://github.com/<ORGANISATION-OU-UTILISATEUR>/<NOM-DU-DEPOT>"   # TODO: à renseigner
+# doi: 10.5281/zenodo.XXXXXXX                                                      # TODO: DOI Zenodo de la release
+preferred-citation:
+  type: article
+  title: "Adaptive SCHC ACK-on-Error for Reducing Downlink Traffic while Preserving Reliability in Constrained IoT Environments based on LPWANs"
+  journal: "Telecommunication Systems"
+  year: 2026
+  authors:
+    - family-names: Atta
+      given-names: Amanvon Ferdinand
+    - family-names: Toutain
+      given-names: Laurent
+    - family-names: Maillé
+      given-names: Patrick
+  notes: "Submitted; update volume, pages and DOI once published."
